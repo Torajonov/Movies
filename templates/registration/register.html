@@ -1,0 +1,46 @@
+{% extends '../wrapper.html' %}
+{% load static %}
+{% block content %}
+	<style>
+	input[type=text], input[type=password] {
+	  width: 200px;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  margin-left: 425;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  box-sizing: border-box;
+	}
+
+	.inpt {
+	  background-color: #FF8D1B;
+	  color: white;
+	  padding: 14px 20px;
+	  margin: 8px 0;
+	  border: none;
+	  cursor: pointer;
+	  width: 100%;
+	}
+
+	.inpt:hover {
+	  opacity: 0.8;
+	}
+
+	</style>
+<br>
+	<center>
+		<h3 class="head">Profil yaratish</h3>
+	</center>
+
+	<form action="" method="POST">
+	  <div class="container">
+	    <!-- <label for="uname"><b>Username & Password</b></label> -->
+	    {{form.as_p}}
+		{% csrf_token %}
+	    <center>
+	    	<input class="inpt" style="width: 300px; height:40px;" type="submit" value="Register"></input>
+	    </center>
+	  </div>
+	</form>
+
+{% endblock %}

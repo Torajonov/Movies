@@ -1,0 +1,107 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+<!-- //nav -->
+<div class="general_social_icons">
+	<nav class="social">
+		<ul>
+			<li class="w3_twitter"><a href="#">Twitter <i class="fa fa-twitter"></i></a></li>
+			<li class="w3_facebook"><a href="#">Facebook <i class="fa fa-facebook"></i></a></li>
+			<li class="w3_dribbble"><a href="#">Dribbble <i class="fa fa-dribbble"></i></a></li>
+			<li class="w3_g_plus"><a href="#">Google+ <i class="fa fa-google-plus"></i></a></li>				  
+		</ul>
+  </nav>
+</div>
+<!-- faq-banner -->
+	<div class="faq">
+			<div class="container">
+				<div class="agileits-news-top">
+					<ol class="breadcrumb">
+					  <li><a href="{% url 'movie:home' %}">Bosh menyu</a></li>
+					  <li class="active">Yangiliklar</li>
+					</ol>
+				</div>
+				<div class="agileinfo-news-top-grids">
+					<div class="col-md-8 wthree-top-news-left">
+						<div class="wthree-news-left">
+							<div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
+								<ul id="myTab" class="nav nav-tabs" role="tablist">
+									<li role="presentation" class="active"><a href="#home1" id="home1-tab" role="tab" data-toggle="tab" aria-controls="home1" aria-expanded="true">Latest News</a></li>
+									<li role="presentation"><a href="#w3bsd" role="tab" id="w3bsd-tab" data-toggle="tab" aria-controls="w3bsd">Movie News</a></li>
+								</ul>
+								<div id="myTabContent" class="tab-content">
+									<div role="tabpanel" class="tab-pane fade in active" id="home1" aria-labelledby="home1-tab">
+						
+
+			{% for post in posts %}											
+			<div class="wthree-news-top-left">
+				<div class="col-md-12 w3-agileits-news-left">
+					<div class="col-sm-5 wthree-news-img">
+						<a href="{% url 'movie:post_detail' post.slug %}">
+							<img width="100%" height="auto" src="{{post.image.url}}" alt="" />
+						</a>
+					</div>
+					<div class="col-sm-7 wthree-news-info">
+						<h5><a href="{% url 'movie:post_detail' post.slug %}">{{post.title}}</a></h5>
+						<p>{{post.body|truncatewords:'15'}}</p>
+						<ul>
+							<li><i class="fa fa-clock-o" aria-hidden="true"></i> {{post.published}}</li>
+							<li><i class="fa fa-eye" aria-hidden="true"></i> {{post.view}}</li>
+						</ul>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+			</div>
+				<div class="clearfix"> </div>
+				<br>
+				<br>
+			{% endfor %}
+
+									</div>
+					
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 wthree-news-right">
+						<!-- news-right-top -->
+						<div class="news-right-top">
+							<div class="wthree-news-right-heading">
+							
+							</div>
+							
+						</div>
+						<!-- //news-right-top -->
+						<!-- news-right-bottom -->
+						<div class="news-right-bottom">
+							<div class="wthree-news-right-heading">
+								<h3>Top News</h3>
+							</div>
+							<div class="news-right-bottom-bg">
+								<div class="news-grids-bottom">
+									{% for post in top_post %}	
+									<div class="top-news-grid">
+										<div class="top-news-grid-heading">
+											<a href="{{post.get_absolute_url}}">{{post.title}}</a>
+											
+										</div>
+										<div class="w3ls-news-t-grid top-t-grid">
+											<ul>
+												<li><i class="fa fa-clock-o"></i> {{post.published}}</li>
+												<li><i class="fa fa-user"></i> {{post.author}}</li>
+											</ul>
+										</div>
+									</div>
+									{% endfor %}	
+								</div>
+							</div>
+						</div>
+						<!-- //news-right-bottom -->
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+	</div>
+<!-- //faq-banner -->
+{% endblock %}

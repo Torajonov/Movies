@@ -1,0 +1,62 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+
+<!-- //nav -->
+<div class="general_social_icons">
+	<nav class="social">
+		<ul>
+			<li class="w3_twitter"><a href="#">Twitter <i class="fa fa-twitter"></i></a></li>
+			<li class="w3_facebook"><a href="#">Facebook <i class="fa fa-facebook"></i></a></li>
+			<li class="w3_dribbble"><a href="#">Dribbble <i class="fa fa-dribbble"></i></a></li>
+			<li class="w3_g_plus"><a href="#">Google+ <i class="fa fa-google-plus"></i></a></li>				  
+		</ul>
+  </nav>
+</div>
+<!-- faq-banner -->
+	<div class="faq">
+	<div class="icons main-grid-border">
+		<div class="container">
+			<h3 class="head">Qidiruv natijalari</h3>
+			<div class="grid_3 grid_4 w3_agileits_icons_page">
+			<div class="icons">
+				
+				 <section id="new">
+					  <h3 class="page-header page-header icon-subheading">{{total_results}} natijalar topildi </h3>
+
+
+					  <div class="row fontawesome-icon-list">
+					  	{% if posts %}
+					  	 {% for post in posts %}
+					  	<ul>
+					  		<li>{{post.title}}</li>
+					  	</ul>
+					  	{% endfor %} 
+
+					  	{% else %}
+					  	      <div class="jumbotron">
+					  	      	<h3><u>{{query}}</u> so'rov uchun natijalar topilmadi !</h3>
+					  	      </div>  
+					  	
+					  	{% endif %}
+					  	
+					  	<br>
+					  	{% for movie  in movies %}
+					  	<ul>
+					  		<li>{{movie.title}}</li>
+					  	</ul>
+					  	{% endfor %}
+
+					  </div>
+
+					</section>
+			
+			</div>
+		</div>
+			
+		</div>	
+	</div>
+	<!-- // Terms of use -->
+	</div>
+<!-- //faq-banner -->
+{% endblock %}

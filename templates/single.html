@@ -1,0 +1,259 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+<div class="general_social_icons">
+	<nav class="social">
+		<ul>
+			<li class="w3_twitter"><a href="#">Twitter <i class="fa fa-twitter"></i></a></li>
+			<li class="w3_facebook"><a href="#">Facebook <i class="fa fa-facebook"></i></a></li>
+			<li class="w3_dribbble"><a href="#">Dribbble <i class="fa fa-dribbble"></i></a></li>
+			<li class="w3_g_plus"><a href="#">Google+ <i class="fa fa-google-plus"></i></a></li>				  
+		</ul>
+  </nav>
+</div>
+<!-- single -->
+<div class="single-page-agile-main">
+<div class="container">
+		<!-- /w3l-medile-movies-grids -->
+			<div class="agileits-single-top">
+				<ol class="breadcrumb">
+				  <li><a href="index.html">Home</a></li>
+				  <li class="active">Janrlar</li>
+				</ol>
+			</div>
+			<div class="single-page-agile-info">
+                   <!-- /movie-browse-agile -->
+                           <div class="show-top-grids-w3lagile">
+				<div class="col-sm-8 single-left">
+					<div class="song">
+						<div class="col-md-5 single-right-grid-left">
+							<div> <img src="{{object.poster.url}}" alt="" class="img-responsive" style="width: 300px; height: 400px;" /> </div>
+						</div>
+						<div class="col-md-7" style="border-style: solid; border-color: #FF8D1B;">
+							<h4>Nomi: {{object.title}}</h4>	
+						</div>
+						<br>
+						<br>
+						<div class="col-md-7" style="border-style: solid; border-color: #FF8D1B;">
+							<h4>Janri: {{object.genre}}</h4>	
+						</div>
+						<br>
+						<br>
+						<div class="col-md-7" style="border-style: solid; border-color: #FF8D1B;">
+							<h4>Rejisor: {{object.director}}</h4>	
+						</div>
+						<br>
+						<br>
+						<div class="col-md-7" style="border-style: solid; border-color: #FF8D1B;">
+							<h4>Davlati: {{object.country}}</h4>	
+						</div>
+						<br>
+						<br>
+						<div class="col-md-7" style="border-style: solid; border-color: #FF8D1B;">
+							<h4>Aktyor: {{object.actors}}</h4>	
+						</div>
+						<br>
+						<br>
+						<div class="col-md-7" style="border-style: solid; border-color: #FF8D1B;">
+							<h4>Yili: {{object.year}}</h4>	
+						</div>
+						<br>
+						<br>
+						<div class="col-md-7" style="border-style: solid; border-color: #FF8D1B;">
+							<h4>Budjeti: {{object.budget}} $</h4>	
+						</div>
+						<br>
+						<br>
+						<div class="col-md-7" style="border-style: solid; border-color: #FF8D1B;">
+							<h4>Reyting: {{object.rating}}</h4>	
+						</div>
+						<br>
+						<br>
+						<div class="col-md-7" style="border-style: solid; border-color: #FF8D1B;">
+							<center>
+						                <h5 class="btn" data-toggle="modal" data-target="#exampleModal1"href="#">Kino Syujeti</h5>
+						        </center>
+							            <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								              <div class="modal-dialog modal-xl">
+								                <div class="modal-content">
+								                  <div class="modal-header">
+								                    <h5 class="modal-title" id="exampleModalLabel">{{object.title}}</h5>
+								                    <button type="button" class="close" data-dismiss="modal" aria-label="Yopish">
+								                    </button>
+								                  </div>
+								                  <div class="modal-body">
+								                    <p>{{object.xaqida|safe}}</p>
+								                  </div>
+								                  <div class="modal-footer">
+								                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Yopish</button>
+								                  </div>
+								                </div>
+								              </div>
+								            </div>	
+						</div>
+						<br>
+						<br>
+						<br>
+						<div class="trailer">
+							<iframe width="100%" height="400" src="https://www.youtube.com/embed/{{object.trailer_link}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+						</div>
+					</div>
+					<div class="song-grid-right">
+						<div class="share">
+							<h5>Share this</h5>
+							<div class="single-agile-shar-buttons">
+							<ul>
+								<li>
+									<div class="fb-like" data-href="https://www.facebook.com/w3layouts" data-layout="button_count" data-action="like" data-size="small" data-show-faces="false" data-share="false"></div>
+									<script>(function(d, s, id) {
+									  var js, fjs = d.getElementsByTagName(s)[0];
+									  if (d.getElementById(id)) return;
+									  js = d.createElement(s); js.id = id;
+									  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.7";
+									  fjs.parentNode.insertBefore(js, fjs);
+									}(document, 'script', 'facebook-jssdk'));</script>
+								</li>
+								<li>
+									<div class="fb-share-button" data-href="https://www.facebook.com/w3layouts" data-layout="button_count" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fw3layouts&amp;src=sdkpreparse">Share</a></div>
+								</li>
+								<li class="news-twitter">
+									<a href="https://twitter.com/w3layouts" class="twitter-follow-button" data-show-count="false">Follow @w3layouts</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+								</li>
+								<li>
+									<a href="https://twitter.com/intent/tweet?screen_name=w3layouts" class="twitter-mention-button" data-show-count="false">Tweet to @w3layouts</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+								</li>
+								<li>
+									<!-- Place this tag where you want the +1 button to render. -->
+									<div class="g-plusone" data-size="medium"></div>
+
+									<!-- Place this tag after the last +1 button tag. -->
+									<script type="text/javascript">
+									  (function() {
+										var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+										po.src = 'https://apis.google.com/js/platform.js';
+										var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+									  })();
+									</script>
+								</li>
+							</ul>
+						</div>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+
+					<div class="all-comments">
+						<div class="all-comments-info">
+							<a href="#">Comments</a>
+							<div class="agile-info-wthree-box">
+								<form>
+									<input type="text" placeholder="Name" required="">			           					   
+									<input type="text" placeholder="Email" required="">
+									<input type="text" placeholder="Phone" required="">
+									<textarea placeholder="Message" required=""></textarea>
+									<input type="submit" value="SEND">
+									<div class="clearfix"> </div>
+								</form>
+							</div>
+						</div>
+						<div class="media-grids">
+							<div class="media">
+								<h5>TOM BROWN</h5>
+								<div class="media-left">
+									<a href="#">
+										<img src="/static/images/user.jpg" title="One movies" alt=" " />
+									</a>
+								</div>
+								<div class="media-body">
+									<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
+									<span>View all posts by :<a href="#"> Admin </a></span>
+								</div>
+							</div>
+							<div class="media">
+								<h5>MARK JOHNSON</h5>
+								<div class="media-left">
+									<a href="#">
+									<img src="/static/images/user.jpg" title="One movies" alt=" " />
+									</a>
+								</div>
+								<div class="media-body">
+									<p>Maecenas ultricies rhoncus tincidunt maecenas imperdiet ipsum id ex pretium hendrerit maecenas imperdiet ipsum id ex pretium hendrerit</p>
+									<span>View all posts by :<a href="#"> Admin </a></span>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 single-right">
+					<h3>Sizga yoqishi mumkin</h3>
+					<div class="single-grid-right">
+						{% for movie in movies %}
+						<div class="single-right-grids">
+							<div class="col-md-4 single-right-grid-left">
+								<a href="{% url 'movie:movie_detail' movie.slug %}"><img src="{{movie.poster.url}}" alt="" /></a>
+							</div>
+							<div class="col-md-8 single-right-grid-right">
+								<a href="single.html" class="title">{{movie.title}}</a>
+								<p class="author"><a href="#" class="author">{{movie.xaqida|truncatewords:'20'}}</a></p>
+								
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						{% endfor %}
+						</div>
+
+					</div>
+				</div>
+				
+
+				
+				<div class="clearfix"> </div>
+			</div>
+				<!-- //movie-browse-agile -->
+				<!--body wrapper start-->
+				
+			<div class="w3_agile_banner_bottom_grid">
+				<div id="owl-demo" class="owl-carousel owl-theme">
+					{% for movie in movies %}
+					<div class="item">
+						<div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
+							<a href="{% url 'movie:movie_detail' movie.slug %}" class="hvr-shutter-out-horizontal"><img src="{{movie.poster.url}}" title="album-name" class="img-responsive" alt=" " />
+								<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
+							</a>
+							<div class="mid-1 agileits_w3layouts_mid_1_home">
+								<div class="w3l-movie-text">
+									<h6><a href="single.html">{{movie.title}}</a></h6>							
+								</div>
+								<div class="mid-2 agile_mid_2_home">
+									<p>{{movie.year}}</p>
+									<div class="block-stars">
+										<ul class="w3l-ratings">
+											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+										</ul>
+									</div>
+									<div class="clearfix"></div>
+								</div>
+							</div>
+							<div class="ribben">
+								<p>Yangi</p>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div>
+			</div>
+			
+		<!--body wrapper end-->
+						
+							 
+				</div>
+				<!-- //w3l-latest-movies-grids -->
+			</div>	
+		</div>
+	<!-- //w3l-medile-movies-grids -->
+	
+{% endblock %}

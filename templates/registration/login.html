@@ -1,0 +1,46 @@
+{% extends '../wrapper.html' %}
+{% load static %}
+{% block content %}
+	<style>
+	input[type=text], input[type=password] {
+	  width: 200px;
+	  padding: 12px 20px;
+	  margin: 8px 0;
+	  margin-left: 425px;
+	  display: inline-block;
+	  border: 1px solid #ccc;
+	  box-sizing: border-box;
+	}
+
+	.inpt {
+	  background-color: #FF8D1B;
+	  color: white;
+	  padding: 14px 20px;
+	  margin: 8px 0;
+	  border: none;
+	  cursor: pointer;
+	  width: 100%;
+	}
+
+	.inpt:hover {
+	  opacity: 0.8;
+	}
+
+	</style>
+<br>
+	<center>
+		<h3 class="head">Kirish</h3>
+	</center>
+
+	<form action="" method="POST">
+	  <div class="container">
+	    <!-- <label for="uname"><b>Username & Password</b></label> -->
+	    {% csrf_token %}
+		{{form.as_p}}
+	    <center>
+	    	<input class="inpt" type="submit" value="Login" next="{{next}}"></input>
+	    </center>
+	  </div>
+	</form>
+
+{% endblock %}

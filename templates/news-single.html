@@ -1,0 +1,176 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+<div class="general_social_icons">
+	<nav class="social">
+		<ul>
+			<li class="w3_twitter"><a href="#">Twitter <i class="fa fa-twitter"></i></a></li>
+			<li class="w3_facebook"><a href="#">Facebook <i class="fa fa-facebook"></i></a></li>
+			<li class="w3_dribbble"><a href="#">Dribbble <i class="fa fa-dribbble"></i></a></li>
+			<li class="w3_g_plus"><a href="#">Google+ <i class="fa fa-google-plus"></i></a></li>				  
+		</ul>
+  </nav>
+</div>
+<!-- faq-banner -->
+	<div class="faq">
+			<div class="container">
+				<div class="agileits-news-top">
+					<ol class="breadcrumb">
+					  <li><a href="index.html">Home</a></li>
+					   <li><a href="news.html">News</a></li>
+					  <li class="active">Single</li>
+					</ol>
+				</div>
+				<div class="agileinfo-news-top-grids">
+					<div class="col-md-8 wthree-top-news-left">
+						<div class="wthree-news-left">
+							<div class="wthree-news-left-img">
+								<img width="100%" height="auto" src="{{object.image.url}}" alt="" />
+								<br>
+								<br>
+								<h4>{{object.title}}</h4>
+								<div class="s-author">
+									<p>Posted By <a href="#"><i class="fa fa-user" aria-hidden="true"></i> {{post.author}}</a> &nbsp;&nbsp; <i class="fa fa-calendar" aria-hidden="true"></i>{{post.published}}<a href="#"><i class="fa fa-comments" aria-hidden="true"></i> Comments (10)</a>
+										<ul>
+											{% for tag in post.tag.all %}
+												<li>
+													<a href="{{tag.get_absolute_url}}">
+														{{tag.name}}
+													</a>
+												</li>
+											{% endfor %}
+										</ul></p>
+								</div>
+								<div id="fb-root"></div>
+							
+								<div class="w3-agile-news-text">
+									<p>
+										{{post.body}}
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="wthree-related-news-left">
+							<h4>Related News</h4>
+							<div class="wthree-news-top-left">
+								<div class="col-md-6 w3-agileits-news-left">
+									<div class="col-sm-5 wthree-news-img">
+										<a href="news-single.html"><img src="images/m1.jpg" alt="" /></a>
+									</div>
+								
+									<div class="clearfix"> </div>
+								</div>
+							
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+						<!-- agile-comments -->
+					
+						<!-- //agile-comments -->
+						<div class="news-related">
+							
+						</div>
+					</div>
+					<div class="col-md-4 wthree-news-right">
+						<!-- news-right-top -->
+						<div class="news-right-top">
+							<div class="wthree-news-right-heading">
+								<h3>Top yangiliklar</h3>
+							</div>
+							{% for post in top_post %}
+							<div class="wthree-news-right-top">
+								<div class="news-grids-bottom">
+									<!-- date -->
+									<div id="design" class="date">
+										<div id="cycler">   
+											<div class="date-text">
+												<p>{{post.published}}</p>
+												<p> <a href="{% url 'movie:post_detail' post.slug %} ">{{post.title}}</a></a></p>
+												
+											</div>
+									
+										</div>
+										<script>
+										function blinker() {
+											$('.blinking').fadeOut(500);
+											$('.blinking').fadeIn(500);
+										}
+										setInterval(blinker, 1000);
+										</script>
+										<script>
+											function cycle($item, $cycler){
+												setTimeout(cycle, 2000, $item.next(), $cycler);
+												
+												$item.slideUp(1000,function(){
+													$item.appendTo($cycler).show();        
+												});
+												}
+											cycle($('#cycler div:first'),  $('#cycler'));
+										</script>
+									</div>
+									<!-- //date -->
+								</div>
+							</div>
+							{% endfor %}
+						</div>
+						<!-- //news-right-top -->
+						<!-- news-right-bottom -->
+				
+						<!-- //news-right-bottom -->
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+			</div>
+				<div class="w3l-latest-movies-grids">
+					<h4 class="latest-text w3_latest_text">Eng songi filmlar</h4>
+						<div class="container">
+								<!-- /latest-movies -->
+								<div class="banner-bottom">
+									<div class="container">
+										<div class="w3_agile_banner_bottom_grid">
+											<div id="owl-demo" class="owl-carousel owl-theme">
+												{% for movie in movies %}
+													
+												
+												<div class="item">
+													<div class="w3l-movie-gride-agile w3l-movie-gride-agile1">
+														<a href="{% url 'movie:movie_detail' movie.slug %}" class="hvr-shutter-out-horizontal"><img src="{{movie.poster.url}}" title="album-name"class="img-responsive" alt=" " />
+															<div class="w3l-action-icon"><i class="fa fa-play-circle" aria-hidden="true"></i></div>
+														</a>
+														<div class="mid-1 agileits_w3layouts_mid_1_home">
+															<div class="w3l-movie-text">
+																<h6><a href="{% url 'movie:movie_detail' movie.slug %}">{{movie.title}}</a></h6>							
+															</div>
+															<div class="mid-2 agile_mid_2_home">
+																<p>{{movie.year}}</p>
+																<div class="block-stars">
+																	<ul class="w3l-ratings">
+																		<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																		<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																		<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																		<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+																		<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+																	</ul>
+																</div>
+																<div class="clearfix"></div>
+															</div>
+														</div>
+														<div class="ribben">
+															<p>Yangi</p>
+														</div>
+													</div>
+												</div>
+												{% endfor %}
+												
+											
+											</div>
+										</div>			
+									</div>
+								</div>
+								<!-- //latest-movies -->
+								 
+						   </div>
+			</div>
+	</div>
+<!-- //faq-banner -->
+{% endblock %}

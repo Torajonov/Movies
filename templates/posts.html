@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	{% for object in object_list %}
+	<ul>
+		<li>
+			<img width="400" height="auto" src="{{object.image.url}}" alt="">
+		</li>
+		<li>
+			<h4>{{object.title}}</h4>
+		</li>
+		<li>
+			{{object.body}}
+		</li>
+		<li>
+			<h4>Category: </h4>
+			<a href="{{object.category.get_absolute_url}}">{{object.category.name}}</a>
+		</li>
+	</ul>
+	{% endfor %}
+</body>
+</html>

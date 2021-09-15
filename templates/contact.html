@@ -1,0 +1,70 @@
+{% extends 'wrapper.html' %}
+{% load static %}
+{% block content %}
+<div class="general_social_icons">
+
+				<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d96694.57473830438!2d72.2363631!3d40.7685025!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38bc949bc91e67bd%3A0xc649b09456639eb!2zNDDCsDQ3JzA4LjIiTiA3MsKwMTgnMDEuMSJF!5e0!3m2!1suz!2s!4v1624459359265!5m2!1suz!2s" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+</div>
+<!-- contact -->
+	<div class="contact-agile">
+		
+		<div class="faq">
+			<h4 class="latest-text w3_latest_text">Biz bilan bog'laning</h4>
+			<div class="container">
+				<div class="col-md-3 location-agileinfo">
+					<div class="icon-w3">
+						<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>
+					</div>
+					<h3>Manzil</h3>
+					<h4>Andijon shahar Boburshox ko'chasi,</h4>
+					<h4>Avtovakzal Ro'parasi,</h4>
+					<h4>Robocode o'quv markazi.</h4>
+				</div>
+				<div class="col-md-3 call-agileits">
+					<div class="icon-w3">
+						<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+					</div>
+					<h3>Telfon</h3>
+					<h4>+99899 899-90-05</h4>
+					<h4>+99893 911-31-23</h4>
+					<h4>+99891 498-01-68</h4>
+				</div>
+				<div class="col-md-3 mail-wthree">
+					<div class="icon-w3">
+						<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+					</div>
+					<h3>Email</h3>
+					<h4><a href="mailto:info@example.com">onemovie@mail.com</a></h4>
+					<h4><a href="mailto:info@example.com">hdmovie@mail.com</a></h4>
+					<h4><a href="mailto:info@example.com">filims@mail.com</a></h4>
+				</div>
+				<div class="col-md-3 social-w3l">
+					<div class="icon-w3">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+					</div>
+					<h3>Ijtimoiy Tarmoqlar</h3>
+					<ul>
+						<li><a href="https://www.facebook.com/javlonbek.torajonov.5"><i class="fa fa-facebook" aria-hidden="true"></i><span class="text">Facebook</span></a></li>
+						<li class="twt"><a href="https://www.youtube.com/channel/UCv5X0oO1NxSOnDA5Vc63ucQ"><i class="fa fa-youtube" aria-hidden="true"></i><span class="text">YouTube</span></a></li>
+						<li class="ggp"><a href="https://www.instagram.com/javlonbek_dev"><i class="fa fa-youtube" aria-hidden="true"></i><span class="text">Instagram</span></a></li>	
+					</ul>
+				</div>
+				<!-- Note a custom script is used to activate toasts:
+$('.toast').toast();
+-->
+<div class="text-center"> <span class="text-success"></span></div>  
+				<div class="clearfix"></div>
+				<form method="POST">
+				{% csrf_token %}
+					<input type="text" name="name" placeholder="ISMINGIZ" required="">
+					<input type="text" name="last_name" placeholder="FAMILIYANGIZ" required="">
+					<input type="text" name="email" placeholder="EMAIL" required="">
+					<input type="text" name="phone" placeholder="TELFON RAQAMINGIZ" required="">
+					<textarea  name="message" placeholder="XABARINGIZ" required=""></textarea>
+					<input type="submit" value="XABARNI JO'NATISH">
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock %}
