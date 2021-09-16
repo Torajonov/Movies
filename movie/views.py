@@ -28,10 +28,7 @@ class HomePageView(View):
 		all_movies = Movie.objects.all().order_by('-id')
 		for x in all_movies:
 			print(x.title)
-			print(x.title)
-			print(x.title)
-			print(x.title)
-			
+		
 		context = {
 			'top_viewed':top_viewed,
 			'movies':movie,
