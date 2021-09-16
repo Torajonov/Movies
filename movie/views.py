@@ -1,9 +1,9 @@
 from django.shortcuts import render, get_object_or_404
 from django.views.generic.base import View
 from django.views.generic import ListView, DetailView
+from django.views.generic.edit import FormMixin
 from .models import *
-
-from .forms import MovieRatingForm, ContactForm 
+from .forms import MovieRatingForm
 import telebot
 
 me = 1971799716
@@ -104,6 +104,7 @@ def genreDetail(request, genre):
 	return render(request, 'genres.html', context)
 
 
+
 def search(request):
 	q = request.GET.get('search', None)
 	movies = Movie.objects.filter(title__icontains=q)
@@ -117,7 +118,6 @@ def search(request):
 		'query':query
 	}
 	return render(request, 'searchResult.html', context)
-
 
 def aloqalar(request):
 	d = bot.send_message(me,"gfgdfgdfgf")
